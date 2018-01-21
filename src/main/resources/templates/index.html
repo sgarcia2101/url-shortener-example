@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Url Shortening Service Demo</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div id="form">
+		<form th:action="@{/save}" th:object="${urlDto}" method="post" name="form" id="form">
+		    <b>Enter a URL:</b>
+		    <br></br>
+		    <input th:field="*{url}" type="text"/>
+		    <input id="submit" name="submit" value="Save" type="submit"/>
+		    <input type="reset" value="Reset" />
+		    <br></br>
+		    
+		    <span>Custom alias (optional):</span>
+		    <br></br>
+		    <input th:field="*{alias}" value="" type="text"/>
+		    <br></br>
+		    
+		    <span>Custom expiration time (optional):</span>
+		    <br></br>
+		    <input th:field="*{expirationTime}" value="" type="text"/>
+		    <br></br>
+		</form>
+	</div>
+</body>
+</html>
