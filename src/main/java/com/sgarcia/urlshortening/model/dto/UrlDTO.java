@@ -4,7 +4,7 @@ public class UrlDTO {
 
 	private String url;
 	private String alias;
-	private String expirationTime;
+	private Integer expirationTime;
 
 	public String getUrl() {
 		return url;
@@ -22,11 +22,11 @@ public class UrlDTO {
 		this.alias = alias;
 	}
 
-	public String getExpirationTime() {
+	public Integer getExpirationTime() {
 		return expirationTime;
 	}
 
-	public void setExpirationTime(String expirationTime) {
+	public void setExpirationTime(Integer expirationTime) {
 		this.expirationTime = expirationTime;
 	}
 }
