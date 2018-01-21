@@ -1,5 +1,7 @@
 package com.sgarcia.urlshortening.repository;
 
+import java.util.concurrent.TimeUnit;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
@@ -14,7 +16,7 @@ public class UrlShorteningRepository {
 	public void save(String key, String url, Integer expirationTime) {
 		ValueOperations<String, String> ops = this.template.opsForValue();
 		if (!this.template.hasKey(key)) {
-			ops.set(key, url);
+			ops.set(key, url, expirationTime, TimeUnit.MILLISECONDS);
 		}
 	}
 

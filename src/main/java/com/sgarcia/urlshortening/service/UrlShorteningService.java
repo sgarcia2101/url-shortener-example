@@ -11,7 +11,8 @@ import com.sgarcia.urlshortening.repository.UrlShorteningRepository;
 @Service
 public class UrlShorteningService {
 
-	private static final int DEFAULT_EXPIRATION_TIME = 30;
+	// Default expiration time in milliseconds
+	private static final int DEFAULT_EXPIRATION_TIME = 60000;
 
 	@Autowired
 	UrlShorteningRepository urlShorteningRepository;
